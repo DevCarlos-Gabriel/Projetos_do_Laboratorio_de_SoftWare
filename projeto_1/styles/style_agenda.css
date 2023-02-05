@@ -1,0 +1,34 @@
+.mold_table_agenda
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.agenda
+{
+    text-align: center;
+    width: 100%;
+    height: 13em;
+}
+
+.table_agenda
+{
+    border-collapse: collapse;
+}
+
+.table_agenda
+{
+    border: 2px solid;
+}
+
+.left_border
+{
+    border-left: 2px solid;
+}
+
+.sub_title
+{
+    margin-bottom: 3%;
+    color: rgb(26, 26, 214);
+}
