@@ -5,24 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculando idade</title>
+
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <!--Programa que calcula a idade de uma pessoa com base no ano de nascimento.-->
 
-    <form>
-        <div>
-            <label>Digite o seu ano de nascimento:</label>
-            
-            <div>
-                <input type="text" id="ano" value="0000">
-
+    <div class="form-center">
+        <form>
+            <h1>Digite o seu ano de nascimento:</h1>
+            <div class="">
+                <div>
+                    <input type="text" id="ano" value="0000">
+                </div>
                 <input type="button" id="calc" value="Calcular">
+                <h2>Sua idade é:</h2>
+                <h3 id="idade"></h3>
             </div>
-
-            <label>Sua idade é:</label>
-            <h2 id="idade">Idade</h2>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <script src="./js/jquery-3.6.4.min.js"></script>
     <script>
