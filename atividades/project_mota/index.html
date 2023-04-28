@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Simple Sidebar - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-dark text-white">MEU PROJETO</div>
+                <div class="list-group list-group-flush ">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">INICIO</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">CADASTROS</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">MOVIMENTAÇÃO</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">RELATORIOS</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">CONFIGURAÇOES</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">SAIR</a>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-primary" id="sidebarToggle">Menu</button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item active"><a class="nav-link" href="#!">SAIR</a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                
+                
+                <!-- PAGINA PRINCIPAL-->
+                <div class="container-fluid">
+                    <!-- MONTE SUAS TELAS AQUI-->
+                    <form action="" class="mt-3">
+                        <h1>...Finalizando Venda...</h1>
+                            <div class="col-md-8">
+                                <label class="form-label"><strong>Total R$</strong></label>
+                                <input class="form-control" id="venda" type="text" value="00">
+                            </div>
+
+                            <div class="col-md-2 mt-2">
+                                <label class="form-label"><strong>Forma de pagamento:</strong></label>
+                                <select id="pag">
+                                    <option value="avista">A vista</option>
+                                    <option value="credito">Credito</option>
+                                    <option value="debito">Debito</option>
+                                </select>
+
+                            <div class="col-md-2 mt-2">
+                                <label class="form-label"></label><strong>Desconto %</strong></label>
+                                <input class="form-control col-md-5" id="desconto" type="text" value="00">
+                            </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label class="form-label"><strong>Total a ser pago</strong></label>
+                                <input class="form-control col-md-5" id="pagamento" type="text" value="00">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-2">
+                                <input class="form-control bg-info" id="calc" type="button" value="Calcular">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="mensagem" > 
+            <div class="modal-dialog"> 
+            <div class="modal-content"> 
+            <!-- ************ MONTA CABEÇALHO ******************--> 
+            <div class="modal-header"> 
+            <button type="button" class="close" data-dismiss="modal"> 
+            <span>X</span></button> 
+            <h4 class="modal-title">Título da mensagem</h4> 
+            </div> 
+            <!--**********MONTA CORPO***********--> 
+            <div class="modal-body"> 
+            <p>Conteúdo da mensagem</p> 
+            </div> 
+            <!--**********MONTA RODAPE ***********--> 
+            <div class="modal-footer"> 
+            <button type="button" class="btn btn-default" data-dismiss="modal"> Fechar</button> 
+            </div> 
+            
+            </div> 
+           </div> 
+            </div>
+
+        
+
+
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js">
+            swal("GRAVAR!", "Deseja confirmar os dados!", "success")</script> 
+        
+        <!-- Core theme JS-->
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/scripts.js"></script>
+        <script src="../js/jquery_v3.6.4_carlos.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('#pag').click(function(){
+                    var val_venda = $('#venda').val();
+                    var form_pag = $('#pag').val();
+                    var descont = $('#desconto').val();
+
+                    if(form_pag == 'avista')
+                    {
+                        var val = 10;
+                        $('#desconto').val(val);
+                    }
+                    if(form_pag == 'credito')
+                    {
+                        var val = 0;
+                        $('#desconto').val(val);
+
+                    }
+                    if(form_pag == 'debito')
+                    {
+                        var val = 5;
+                        $('#desconto').val(val);
+                    }
+
+
+
+                    let pag = (val_venda - (val_venda*(val/100)));
+
+                    $('#pagamento').val(pag);
+
+                })
+
+                $('#calc').click(function(){
+                    var val_venda = $('#venda').val();
+                    let deconto = $('#desconto').val();
+
+                    let pag = (val_venda - (val_venda*(desconto/100)));
+                    
+                    $('#pagamento').val(pag);
+                })
+                
+                
+            })
+        </script>
+    </body>
+</html>

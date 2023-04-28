@@ -1,0 +1,202 @@
+<!doctype>
+<html>
+<head>
+  <title>VARIOS_CHANGES</title>
+   
+   
+   <style>
+     #controles
+	 {
+	 
+	 border:2px solid;
+	 height: 50px;
+     padding:12px; 
+	 width: 80%; 
+	 border-radius:10px;
+	 box-shadow:2px 2px 10px #CCC;
+	 margin-top:70px;
+	 background:white;
+     
+	 }
+
+     #imagem
+	 {
+	 
+	 border:2px solid;
+	 
+	 padding:12px; 
+	 width: 80%; 
+	 border-radius:10px;
+	 box-shadow:2px 2px 10px #CCC;
+	 margin-top:5px;
+	 background:white;
+	 }
+	 
+	
+	 
+   </style>
+   
+</head>
+<body>
+  
+  
+
+  <div id="quadro" style="border:2px solid; margin:20px;padding:12px">
+			<H1>...FINALIZANDO VENDA...</H1>
+            <label> TOTAL R$ </label>
+			    <input type="text" id="total" value="500" size="12"><br>
+			  <br>
+			  Forma de Pagamento
+			  <select id="forma">
+			     <option id="1"> A vista  </option>
+			     <option id="2"> Credito 10% </option>
+			     <option id="3"> Debito  5%</option>
+			    </select> <br><br>
+				
+			  <label> desconto </label>
+			  <input type="text" id="desconto" size="10" value="10">%<br>
+			  <br>
+			  
+			  <label> Total da Pagar R$</label>
+			  <input type="text" id="pagar" size="12" value="0"><br><br>
+			  <input type="button" id="calc" value="Calcular">
+			  
+  </div>
+  
+  
+   <br> <br>
+  <div id="quadro" style="border:2px solid; margin:20px; padding:12px">
+  <H2> ONCHAGE E ONCLICK </H2>
+  <p id="texto">HOJE É DOMINGO DO PÉ DO CACHIMBO</p>
+		    
+			  <select id="cor">
+				   <option value="blue"> Azul  </option>
+				   <option value="red">  Vermelho </option>
+				   <option value="green">  Verde </option>
+				   <option value="yellow">  Amarelo </option>
+				   <option value="gray">  Cinza </option>
+				   <option value="aqua">  Aqua </option>
+				   <option value="rgb(133, 230, 230)"> Tom escuro de Aqua </option>
+			  </select>
+
+			  <select id="font">
+				<option value="arial"> arial  </option>
+				<option value="Times new roman"> Times new roman  </option>
+				 <option value="calibri"> calibri  </option>
+				 <option value="san-serif">  san-serif </option>
+				
+				</select>
+
+				<select id="tamanho">
+					<option value="14"> 14  </option>
+					<option value="18"> 18 </option>
+					 <option value="22"> 22  </option>
+					 <option value="26">  26 </option>
+					
+					</select>
+				
+			  <button id="n" value="bold">N</button>
+			  <button id="i" value="bold">I</button>
+			  <button id="s" value="bold">S</button>
+		 
+		
+  </div>
+  
+  <div id="quadro" style="border:2px solid; margin:20px; padding:12px">
+  
+			<div id="controles" >
+    <table>
+        <tr>
+            <td>
+                TAMANHO<input type="range" id="tam" min="100" max="1000">
+                <p id="tam_texto">0</p>
+            </td>
+            <td>
+              ARREDONDAMENTO
+              <input type="range" id="arr" min="10" max="100">
+                <p id="redondo">0</p>
+            </td>
+            <td>
+
+                OPACIDADE
+                <input type="range" id="opac" min="10" max="100">
+                  <p id="opacidade">0</p>
+            </td>
+        </tr>
+    </table>    
+          
+  </div>
+
+  <div id="imagem" >
+    <img src="mulher.jpg" id="mulher" width="350px">
+          
+  </div>  
+		 
+		
+  </div>
+  <!--https://code.jquery.com/jquery-3.6.4.min.js-->
+  
+    <script src="../js/jquery_v3.6.4_carlos.js"></script>    
+   <script>
+   
+      $(function(){
+		$('#cor').change(function(){
+			let cor = $(this).val();
+
+			$('#texto').css('color',cor);
+
+		})// fim do metodo muda cor
+
+		$('#font').change(function(){
+			let font = $(this).val();
+
+			$('#texto').css('font-family',font);
+
+		})// fim do metodo muda tipo da fonte
+
+		$('#tamanho').change(function(){
+			let size = $(this).val();
+
+			$('#texto').css('font-size',size);
+
+		})// fim do metodo muda tamanho da fonte
+
+		$('#n').change(function(){
+			let size = $(this).val();
+
+			$('#texto').css('font-size',size);
+
+		})// fim do metodo muda tamanho da fonte
+
+		$('#tam').change(function(){
+			let t = $(this).val();
+
+			$('#tam_texto').text(t);
+			$('#mulher').css('width',t+'px');
+
+		})// fim do metodo muda tamanho da fonte
+
+		$('#arr').change(function(){
+			let t = $(this).val();
+			
+			$('#redondo').text(t);
+			$('#mulher').css('border-radius',t+'px');
+
+		})
+
+		$('#opac').change(function(){
+			let t = $(this).val();
+			
+			$('#opacidade').text(t);
+			$('#mulher').css('opacity',t+'%');
+
+		})
+		
+		});//end final
+	  
+   </script>
+   
+ 
+ 
+</body>
+</html>
